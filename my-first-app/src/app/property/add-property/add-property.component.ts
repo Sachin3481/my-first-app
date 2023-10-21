@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 
@@ -9,6 +9,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent implements OnInit {
+  @ViewChild('Form') addPropertyForm !:NgForm
 
   constructor(private router:Router) { }
 
@@ -23,7 +24,7 @@ export class AddPropertyComponent implements OnInit {
   onSubmit(Form :NgForm)
   {
     console.log("Successfully saved");
-    console.log(Form);
+    console.log(this.addPropertyForm);
   }
 
 }
